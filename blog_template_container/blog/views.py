@@ -1,10 +1,26 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
+#fake posts Dummy_Data
+posts = [
+    {
+        'title': 'title1',
+        'content': 'abcdefghijklmnopqrstuvwxyz',
+        'date': 'Jan 28, 2021'
+
+    }
+]
+
+
+
+
 def home(request):
-    return HttpResponse('<h1>ello :P</h2>')
+    context = {
+        'posts': posts
+    }
+    return render(request, 'blog/index.html', context)
 
 
 def about(request):
-    return HttpResponse('<h1>About</h2>')
+    return render(request, 'blog/about.html')
 
