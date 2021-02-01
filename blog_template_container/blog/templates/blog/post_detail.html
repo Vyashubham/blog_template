@@ -1,0 +1,20 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+
+
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <small class="text-muted">Created on {{ object.Date|date:'M d, Y' }}</small>
+            <br>
+            <small class="text-muted">Last Modified on {{ object.Last_Modified|date:'M d, Y'  }}</small>
+          </div>
+          <h2 class="article-title">{{ object.Title }}</h2>
+          <p class="article-content">{{ object.Content }}</p>
+        </div>
+      </article>
+
+
+{% endblock content %}
