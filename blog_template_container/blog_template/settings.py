@@ -131,3 +131,12 @@ MEDIA_URL = '/media/'
 LOGIN_REDIRECT_URL = 'website_home'
 
 LOGIN_URL = 'login_view'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+
+EMAIL_HOST = 'smtp.gmail.com'
+
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = #enter email --> use env variable
+EMAIL_HOST_PASSWORD = #enter email's password --> use env variable
