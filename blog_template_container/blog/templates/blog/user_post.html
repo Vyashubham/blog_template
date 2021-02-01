@@ -1,0 +1,39 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+
+    <h1 class="mb-">Posts By {{ view.kwargs.username }} ({{ page_obj.paginator.count }})</h1>
+
+    {% for post in posts %}
+    <article class="media content-section">
+        <div class="media-body">
+          <div class="article-metadata">
+            <small class="text-muted">Created on {{ post.Date|date:'M d, Y' }}</small>
+            <br>
+            <small class="text-muted">Last Modified on {{ post.Last_Modified|date:'M d, Y'  }}</small>
+          </div>
+          <h2><a class="article-title" href="{% url 'post_detail_view' post.id %}">{{ post.Title }}</a></h2>
+          <p class="article-content">{{ post.Content }}</p>
+        </div>
+      </article>
+      
+        <!-- <h1>{{ post.title }}</h1>
+        <h2>{{ post.date }}</h2>
+        <p>{{ post.content }}</p> -->
+    {% endfor %}
+          <div>
+            {% if is_paginated %}
+              {% if page_obj.has_previous %}
+             
+                <a class='btn btn=outline-info mb-4' href="?page={{ page.obj.previous }}">Previous</a>
+                
+              {% endif %}  
+              {% if page_obj.has_next %}
+              <a class='btn btn=outline-info mb-4' href="?page={{ page_obj.next_page_number }}">Next</a>
+              
+              {% endif %}
+              
+
+            {% endif %}
+          </div>
+{% endblock content %}
