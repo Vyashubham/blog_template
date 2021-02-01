@@ -10,6 +10,12 @@
             <small class="text-muted">Created on {{ object.Date|date:'M d, Y' }}</small>
             <br>
             <small class="text-muted">Last Modified on {{ object.Last_Modified|date:'M d, Y'  }}</small>
+            {% if user.is_authenticated %}
+              <div>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1"  href="{% url 'post_update_view' object.id %}">Update</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post_delete_view' object.id %}">Delete</a>
+              </div>
+            {% endif %}
           </div>
           <h2 class="article-title">{{ object.Title }}</h2>
           <p class="article-content">{{ object.Content }}</p>
