@@ -54,6 +54,8 @@ class PostCreateView(LoginRequiredMixin, CreateView):
     fields = ['Title', 'Content']
 
 
+
+
 class PostUpdateView(LoginRequiredMixin, UpdateView):
     model = Post
     fields = ['Title', 'Content']
