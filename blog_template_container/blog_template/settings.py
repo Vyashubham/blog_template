@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
-# import storages
+import django_on_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -26,7 +26,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['shubham-vyas.herokuapp.com']
+ALLOWED_HOSTS = ['vyashubham.herokuapp.com']
 
 
 # Application definition
@@ -157,21 +157,12 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # AWS_DEFAULT_ACL = None
 # DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.s3Boto3Storage'
 
-<<<<<<< HEAD
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATIC_URL = '/static/'
 # STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-=======
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'staticfiles'))
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
->>>>>>> 9dc53b2a6940d53db3776eb6f71e5e9e0d7be056
 
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -205,3 +196,7 @@ AWS_S3_SIGNATURE_VERSION = 's3v4'
 AWS_S3_REGION_NAME = 'ap-south-1'
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
+
+
+# Activate Django-Heroku.
+django_on_heroku.settings(locals())
