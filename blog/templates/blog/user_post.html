@@ -8,12 +8,12 @@
     <article class="media content-section">
         <div class="media-body">
           <div class="article-metadata">
-            <small class="text-muted">Created on {{ post.Date|date:'M d, Y' }}</small>
+            <small class="text-muted">Created on {{ post.Date|date:'M d, Y'|safe }}</small>
             <br>
-            <small class="text-muted">Last Modified on {{ post.Last_Modified|date:'M d, Y'  }}</small>
+            <small class="text-muted">Last Modified on {{ post.Last_Modified|date:'M d, Y'|safe  }}</small>
           </div>
-          <h2><a class="article-title" href="{% url 'post_detail_view' post.id %}">{{ post.Title }}</a></h2>
-          <p class="article-content">{{ post.Content }}</p>
+          <h2><a class="article-title" href="{% url 'post_detail_view' post.id %}">{{ post.Title|safe }}</a></h2>
+          <p class="article-content">{{ post.Content|safe }}</p>
         </div>
       </article>
       

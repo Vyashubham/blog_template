@@ -17,8 +17,8 @@
               </div>
             {% endif %}
           </div>
-          <h2 class="article-title">{{ object.Title }}</h2>
-          <p class="article-content">{{ object.Content }}</p>
+          <h2 class="article-title">{{ object.Title|safe }}</h2>
+          <p class="article-content">{{ object.Content|safe }}</p>
         </div>
       </article>
 
