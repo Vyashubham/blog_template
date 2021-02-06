@@ -9,9 +9,10 @@ class Post(models.Model):
     Content = HTMLField()
     Date = models.DateTimeField(auto_now_add=True)
     Last_Modified = models.DateTimeField(auto_now=True)
+    slug = models.SlugField()
 
     def __str__(self):
         return self.Title
 
     def get_absolute_url(self):
-        return reverse('post_detail_view', kwargs={'pk': self.pk})
+        return reverse('post_detail_view', kwargs={'slug': self.slug})
