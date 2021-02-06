@@ -20,4 +20,5 @@ s3transfer==0.2.0
 six==1.12.0
 urllib3==1.23
 whitenoise==4.1.2
-django_on_heroku
+django_on_heroku==1.1.2
+django-tinymce==3.2.0
