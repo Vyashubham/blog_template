@@ -10,7 +10,7 @@
                     <h2>Are you sure you want to delete "{{ object.Title }}"</h2>
                 <div class="form-group">
                     <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
-                    <a class="btn btn-outline-secondary" href="{% url 'post_detail_view' object.id %}">Cancel</a>
+                    <a class="btn btn-outline-secondary" href="{% url 'post_detail_view' object.slug %}">Cancel</a>
                 </div>
             </fieldset>
         </form>

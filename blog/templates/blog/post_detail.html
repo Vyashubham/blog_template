@@ -12,8 +12,8 @@
             <small class="text-muted">Last Modified on {{ object.Last_Modified|date:'M d, Y'  }}</small>
             {% if user.is_authenticated %}
               <div>
-                <a class="btn btn-secondary btn-sm mt-1 mb-1"  href="{% url 'post_update_view' object.id %}">Update</a>
-                <a class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post_delete_view' object.id %}">Delete</a>
+                <a class="btn btn-secondary btn-sm mt-1 mb-1"  href="{% url 'post_update_view' object.slug %}">Update</a>
+                <a class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post_delete_view' object.slug %}">Delete</a>
               </div>
             {% endif %}
           </div>
