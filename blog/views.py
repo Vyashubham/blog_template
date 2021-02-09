@@ -72,3 +72,10 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html')
 
+
+def junk(request):
+    context = {
+    'posts': Post.objects.all().order_by('-Date')
+}
+    
+    return render(request, 'blog/junk.html', context)
