@@ -1,39 +1,63 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/junk.html' %}
 
 {% block content %}
 
-    <h1>Home page</h1>
-
-    {% for post in posts %}
-    <article class="media content-section">
-        <div class="media-body">
-          <div class="article-metadata">
-            <small class="text-muted">Created on {{ post.Date|date:'M d, Y'|safe }}</small>
-            <br>
-            <small class="text-muted">Last Modified on {{ post.Last_Modified|date:'M d, Y'|safe  }}</small>
-          </div>
-          <h2><a class="article-title" href="{% url 'post_detail_view' post.slug %}">{{ post.Title|safe }}</a></h2>
-          <p class="article-content">{{ post.Content|safe }}</p>
+<div class="page-header header-filter clear-filter white-filter" >
+  <!-- style="background-image: url('./assets/img/bg2.jpg');" change purple filter to white-filter -->
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 ml-auto mr-auto">
+        <div class="profile-photo-small profile_pic">
+          <img src="https://shubhamvyas.com/images/circle-cropped-bw.webp" alt="shubham" class="rounded-circle img-fluid">
         </div>
-      </article>
-      
-        <!-- <h1>{{ post.title }}</h1>
-        <h2>{{ post.date }}</h2>
-        <p>{{ post.content }}</p> -->
-    {% endfor %}
-          <div>
-            {% if is_paginated %}
-              {% if page_obj.has_previous %}
-             
-                <a class='btn btn=outline-info mb-4' href="?page={{ page.obj.previous }}">Previous</a>
-                
-              {% endif %}  
-              {% if page_obj.has_next %}
-              <a class='btn btn=outline-info mb-4' href="?page={{ page_obj.next_page_number }}">Next</a>
-              
-              {% endif %}
-              
+        <div class="brand">
+          <h1>HI! I'm Shubham.</h1>
+          <h3>Alright be calm, and start working.</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main">
+  <div class="section section-basic">
+    <div class="container">
 
-            {% endif %}
-          </div>
+    <h2 class="brand title latest-post-tag">Latest Post</h2>
+
+      {% for post in posts|slice:":1" %}
+      <a href="{% url 'post_detail_view' post.slug %}">
+          <div class="card card-nav-tabs text-center">  
+              <div class="card-body">
+                <h4 class="card-title">{{ post.Title|safe }}</h4>
+                <p class="card-text">{{ post.Content|safe }}</p>
+                <!-- <a href="javascript:;" class="btn">Go somewhere</a> -->
+              </div>
+              <div class="card-footer text-muted">
+                {{ post.Date|date:'M d, Y'|safe }}
+              </div>
+            </div>
+      </a>
+        
+  {% endfor %}
+  
+            <!-- <ul class="pagination pagination-info">
+              {% if is_paginated %}
+                {% if page_obj.has_previous %}
+                -->
+                  <!-- <a class='btn btn=outline-info mb-4' href="?page={{ page.obj.previous }}">Previous</a> -->
+                  <!-- <li class="page-item btn btn-default"><a href="?page={{ page.obj.previous }}" class="page-link"> prev</a></li>
+                   -->
+                <!-- {% endif %}  
+                {% if page_obj.has_next %} -->
+                <!-- <a class='btn btn=outline-info mb-4' href="?page={{ page_obj.next_page_number }}">Next</a> -->
+                <!-- <li class="page-item btn btn-default"><a href="?page={{ page_obj.next_page_number }}" class="page-link">next </a></li>
+                 -->
+                <!-- {% endif %}
+                 -->
+<!--   
+              {% endif %} -->
+  
+    </div>
+  </div>
+</div>
 {% endblock content %}
