@@ -1,46 +1,4 @@
-{% extends 'blog/junk.html' %}
+{% extends 'blog/base.html' %}
 
 {% block content %}
-
-    
-
-    {% for post in posts %}
-    <div class="card card-nav-tabs text-center">  
-        <div class="card-body">
-          <h4 class="card-title">{{ post.Title|safe }}</h4>
-          <p class="card-text">{{ post.Content|safe }}</p>
-          <!-- <a href="javascript:;" class="btn">Go somewhere</a> -->
-        </div>
-        <div class="card-footer text-muted">
-          {{ post.Date|date:'M d, Y'|safe }}
-        </div>
-      </div>
-{% endfor %}
-
-          <ul class="pagination pagination-info">
-            {% if is_paginated %}
-              {% if page_obj.has_previous %}
-             
-                <!-- <a class='btn btn=outline-info mb-4' href="?page={{ page.obj.previous }}">Previous</a> -->
-                <li class="page-item btn btn-default"><a href="?page={{ page.obj.previous }}" class="page-link"> prev</a></li>
-                
-              {% endif %}  
-              {% if page_obj.has_next %}
-              <!-- <a class='btn btn=outline-info mb-4' href="?page={{ page_obj.next_page_number }}">Next</a> -->
-              <li class="page-item btn btn-default"><a href="?page={{ page_obj.next_page_number }}" class="page-link">next </a></li>
-              
-              {% endif %}
-              
-
-            {% endif %}
-<!--           
-          <ul class="pagination pagination-info">
-            <li class="page-item"><a href="javascript:void(0);" class="page-link"> prev</a></li>
-            <li class="page-item"><a href="javascript:void(0);" class="page-link">1</a></li>
-            <li class="page-item"><a href="javascript:void(0);" class="page-link">2</a></li>
-            <li class="active page-item"><a href="javascript:void(0);" class="page-link">3</a></li>
-            <li class="page-item"><a href="javascript:void(0);" class="page-link">4</a></li>
-            <li class="page-item"><a href="javascript:void(0);" class="page-link">5</a></li>
-            <li class="page-item"><a href="javascript:void(0);" class="page-link">next </a></li>
-          </ul> -->
 {% endblock content %}
