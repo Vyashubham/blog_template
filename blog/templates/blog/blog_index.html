@@ -1,4 +1,54 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
+<div class="page-header header-filter clear-filter white-filter bg-img" >
+  <div class="container">
+    
+  </div>
+</div>
+<div class="main main-raised">
+    
+  <div class="section section-basic">
+    <div class="container">
+      <div>
+        <h2 class="brand">BLOGS</h2>
+      </div>
+
+
+
+      {% for post in posts %}
+      <a href="{% url 'post_detail_view' post.slug %}">
+          <div class="card card-nav-tabs text-center">  
+              <div class="card-body">
+                <h4 class="card-title">{{ post.Title|safe }}</h4>
+                <p class="card-text">{{ post.Content|safe }}</p>
+                <!-- <a href="javascript:;" class="btn">Go somewhere</a> -->
+              </div>
+              <div class="card-footer text-muted">
+                {{ post.Date|date:'M d, Y'|safe }}
+              </div>
+            </div>
+      </a>
+        
+  {% endfor %}
+  
+            <ul class="pagination pagination-info">
+              {% if is_paginated %}
+                {% if page_obj.has_previous %}
+                
+                  <a class='btn btn=outline-info mb-4' href="?page={{ page.obj.previous }}">Previous</a>
+                  <!-- <li class="page-item btn btn-default"><a href="?page={{ page.obj.previous }}" class="page-link"> prev</a></li> -->
+                  
+                {% endif %}  
+                {% if page_obj.has_next %}
+                <a class='btn btn=outline-info mb-4' href="?page={{ page_obj.next_page_number }}">Next</a>
+                 
+                {% endif %}
+                
+  
+              {% endif %}
+  
+    </div>
+  </div>
+</div>
 {% endblock content %}
