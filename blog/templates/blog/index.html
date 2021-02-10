@@ -1,30 +1,31 @@
-{% extends 'blog/junk.html' %}
+{% extends 'blog/base.html' %}
 
 {% block content %}
-
-<div class="page-header header-filter clear-filter white-filter" >
-  <!-- style="background-image: url('./assets/img/bg2.jpg');" change purple filter to white-filter -->
+<div class="page-header header-filter clear-filter white-filter" ">
   <div class="container">
     <div class="row">
       <div class="col-md-8 ml-auto mr-auto">
-        <div class="profile-photo-small profile_pic">
-          <img src="https://shubhamvyas.com/images/circle-cropped-bw.webp" alt="shubham" class="rounded-circle img-fluid">
-        </div>
         <div class="brand">
+          <div class="">
+            <img class="profile_pic" src="https://shubhamvyas.com/images/circle-cropped-bw.webp" alt="">
+          </div>
           <h1>HI! I'm Shubham.</h1>
-          <h3>Alright be calm, and start working.</h3>
+          <h3>Alright, be calm and start working.</h3>
         </div>
       </div>
     </div>
   </div>
 </div>
-<div class="main">
+<div class="main main-raised">
   <div class="section section-basic">
     <div class="container">
+      <div>
+        <h2 class="brand">Latest Post</h2>
+      </div>
 
-    <h2 class="brand title latest-post-tag">Latest Post</h2>
 
-      {% for post in posts|slice:":1" %}
+
+      {% for post in posts|slice:":2" %}
       <a href="{% url 'post_detail_view' post.slug %}">
           <div class="card card-nav-tabs text-center">  
               <div class="card-body">
