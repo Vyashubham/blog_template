@@ -32,13 +32,13 @@ class PostListView(ListView):
 
     paginate_by = 2 #change this to a higher number
 
-# class PostListView(ListView):
-#     model = Post
-#     template_name = 'blog/blog_index.html'
-#     context_object_name = 'posts'
-#     ordering = ['-Date']
+class BlogpostListView(ListView):
+    model = Post
+    template_name = 'blog/blog_index.html'
+    context_object_name = 'posts'
+    ordering = ['-Date']
 
-#     paginate_by = 2 #change this to a higher number
+    paginate_by = 2 #change this to a higher number
 
 class UserPostListView(ListView):
     model = Post
