@@ -106,6 +106,14 @@ footer{
 
 }
 
+.center-element{
+  height: 80vh;
+  width: 80vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 
 
