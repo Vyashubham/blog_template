@@ -30,7 +30,7 @@
           <div class="card card-nav-tabs text-center">  
               <div class="card-body">
                 <h4 class="card-title">{{ post.Title|safe }}</h4>
-                <p class="card-text">{{ post.Content|safe }}</p>
+                <p class="card-text">{{ post.Content|safe|truncatewords:50 }}</p>
                 <!-- <a href="javascript:;" class="btn">Go somewhere</a> -->
               </div>
               <div class="card-footer text-muted">
