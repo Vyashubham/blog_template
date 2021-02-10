@@ -1,6 +1,6 @@
 html, body, main, section{
   background-color: #f6f6f6 !important;
-  color: rgb(155, 2, 2) !important;
+  
   font-size: 16px;
 }
 
@@ -36,6 +36,7 @@ footer{
   font-weight: bold;
   /* background-color: antiquewhite; */
   padding-top: 5rem;
+  padding-bottom: 2.5rem;
   
 
 }
@@ -65,12 +66,62 @@ footer{
   color: white !important;
   
 }
-@media only screen and (max-width: 600px) {
+
+.date-adj{
+
+  /* background-color: aqua; */
+  padding: 1rem;
+
+}
+
+.blog-end-dot{
+  font-size: 4.5rem;
+}
+
+.blog-edit-btn{
+  width: 50%;
+  display: flex;
+  padding-bottom: 3rem;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  /* background-color: aquamarine ; */
+}
+
+.edit-btn{
+  background-color: black !important;
+  color: white !important;
+  border-radius: .3rem;
+}
+
+
+.new-post-btn{
+  margin: 2rem 0;
+}
+
+
+.new-post-btn:hover{
+  background-color: #5bc0de !important;
+  color: #ffffff !important;
+  transition: .3s;
+
+}
+
+
+
+
+@media only screen and (max-width: 800px) {
   /* body {
     background-color: lightblue !important;
   } */
 
   .profile_pic{
     width: 50vw !important;
+  }
+
+  .new-post-btn{
+    float: none !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
