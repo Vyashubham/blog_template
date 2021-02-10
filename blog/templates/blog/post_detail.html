@@ -1,26 +1,31 @@
 {% extends 'blog/base.html' %}
 
 {% block content %}
-
-
-
-    <article class="media content-section">
-        <div class="media-body">
-          <div class="article-metadata">
-            <small class="text-muted">Created on {{ object.Date|date:'M d, Y' }}</small>
-            <br>
-            <small class="text-muted">Last Modified on {{ object.Last_Modified|date:'M d, Y'  }}</small>
-            {% if user.is_authenticated %}
-              <div>
-                <a class="btn btn-secondary btn-sm mt-1 mb-1"  href="{% url 'post_update_view' object.slug %}">Update</a>
-                <a class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post_delete_view' object.slug %}">Delete</a>
-              </div>
-            {% endif %}
+<div class="page-header header-filter clear-filter white-filter bg-img" >
+  <div class="container">
+    
+  </div>
+</div>
+<div class="main main-raised">
+    
+  <div class="section section-basic">
+    <div class="container">
+      <div>
+        
+        <div class="container">
+          <h1 class="brand text-center">{{ post.Title }}</h1>
+          <p class="text-center date-adj">{{ post.Date|date:'M d, Y' }}</p>
+          {% if user.is_authenticated %}
+          <div class="container blog-edit-btn">
+            <a class="btn btn-secondary btn-sm mt-1 mb-1 edit-btn"  href="{% url 'post_update_view' object.slug %}">Update</a>
+            <a class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post_delete_view' object.slug %}">Delete</a>
           </div>
-          <h2 class="article-title">{{ object.Title|safe }}</h2>
-          <p class="article-content">{{ object.Content|safe }}</p>
+        {% endif %}
+          {{ post.Content|safe }}
+          <h1 class="text-center blog-end-dot">. . .</h1>
         </div>
-      </article>
-
-
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock content %}
