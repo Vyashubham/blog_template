@@ -48,6 +48,17 @@ footer{
   border-radius: .3rem;
   
 }
+
+.bg-img{
+  height: 40vh !important;
+
+  background-image: url(https://images.unsplash.com/photo-1510472306330-201b18c210fc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+
+}
 .link-outline:hover{
   background-color: rgb(78, 75, 75);
   transition: .5s;
