@@ -16,12 +16,24 @@ class Profile(models.Model):
 
 class VyasProfile(models.Model):
 
+    profile_options =[
+        ('award', 'Award'),
+        ('favourite', 'Favourite'),
+        ('code', 'Code'),
+        ('community', 'Community'),
+    ]
+
+
+
     Title = models.CharField(max_length=100)
     Description = HTMLField()
     Date_started = models.DateField()
     Date_ended = models.DateField(null=True)
-    Category = models.CharField(max_length=50)
-    
+    # Category = models.CharField(max_length=50)
+    Category= models.CharField(max_length=30, choices=profile_options, default='Community')
+    # year_in_school = models.CharField(max_length=2,
+    #                                   choices=YEAR_IN_SCHOOL_CHOICES,
+    #                                   default=FRESHMAN)
     
 
     def __str__(self):
