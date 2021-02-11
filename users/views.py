@@ -13,11 +13,23 @@ from .models import VyasProfile
 
 
 def profile(request):
-    context = {
-        'things': VyasProfile.objects.all()
+    community = {
+        'community': VyasProfile.objects.all().filter(Category='Community')
     }
 
-    return render(request, 'users/profile.html', context)
+    code = {
+        'code': VyasProfile.objects.all().filter(Category='Code')
+    }
+
+    awards = {
+        'code': VyasProfile.objects.all().filter(Category='Award')
+    }
+
+    favourite = {
+        'code': VyasProfile.objects.all().filter(Category='Favourite')
+    }
+
+    return render(request, 'users/profile.html', community, code, )
 
 def register(request):
     if request.method == 'POST':
