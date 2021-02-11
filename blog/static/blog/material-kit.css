@@ -17097,9 +17097,12 @@
     margin-right: 15px;
     margin-top: -30px;
     border: 0;
-    background: linear-gradient(60deg, #eee, #bdbdbd);
+    
   }
-  
+  /* linear-gradient(
+60deg
+, #eee, #bdbdbd);
+} */
   .card .card-header .title {
     color: #ffffff;
   }
@@ -19090,4 +19093,4 @@
     }
   }
   
-  /*# sourceMappingURL=kit-free.css.map */
+  
