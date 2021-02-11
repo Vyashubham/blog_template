@@ -2860,7 +2860,7 @@
   
   .btn:not(:disabled):not(.disabled):active:focus,
   .btn:not(:disabled):not(.disabled).active:focus {
-    box-shadow: 0 0 0 0.2rem rgba(156, 39, 176, 0.25), none;
+    /* box-shadow: 0 0 0 0.2rem rgba(41, 39, 176, 0.25), none; */
   }
   
   a.btn.disabled,
@@ -2870,15 +2870,15 @@
   
   .btn-primary {
     color: #fff;
-    background-color: #9c27b0;
-    border-color: #9c27b0;
+    /* background-color: #9c27b0;
+    border-color: #9c27b0; */
     box-shadow: none;
   }
   
   .btn-primary:hover {
     color: #fff;
-    background-color: #802091;
-    border-color: #771e86;
+    /* background-color: #802091;
+    border-color: #771e86; */
   }
   
   .btn-primary:focus,
@@ -4330,7 +4330,7 @@
   .nav-pills .nav-link.active,
   .nav-pills .show>.nav-link {
     color: #fff;
-    background-color: #9c27b0;
+    
   }
   
   .nav-fill .nav-item {
@@ -5087,13 +5087,13 @@
     padding: 0.5rem 0.75rem;
     margin-left: 0;
     line-height: 1.25;
-    color: #9c27b0;
+    /* color: #9c27b0; */
     background-color: transparent;
     border: 0 solid #dee2e6;
   }
   
   .page-link:hover {
-    color: #641971;
+    /* color: #641971; */
     text-decoration: none;
     background-color: #e9ecef;
     border-color: #dee2e6;
@@ -5123,8 +5123,8 @@
   .page-item.active .page-link {
     z-index: 1;
     color: #fff;
-    background-color: #9c27b0;
-    border-color: #9c27b0;
+    /* background-color: #9c27b0;
+    border-color: #9c27b0; */
   }
   
   .page-item.disabled .page-link {
@@ -5434,8 +5434,8 @@
   .list-group-item.active {
     z-index: 2;
     color: #fff;
-    background-color: #9c27b0;
-    border-color: #9c27b0;
+    /* background-color: #9c27b0;
+    border-color: #9c27b0; */
   }
   
   .list-group-flush .list-group-item {
@@ -15229,13 +15229,13 @@
   }
   
   .nav-pills .nav-item .nav-link:hover {
-    background-color: rgba(200, 200, 200, 0.2);
+    /* background-color: rgba(200, 200, 200, 0.2); */
   }
   
   .nav-pills .nav-item .nav-link.active {
     color: #ffffff;
-    background-color: #9c27b0;
-    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6);
+    /* background-color: #9c27b0; */
+    /* box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(156, 39, 176, 0.6); */
   }
   
   .nav-pills .nav-item i {
@@ -15247,8 +15247,8 @@
   .nav-pills.nav-pills-info .nav-item .nav-link.active,
   .nav-pills.nav-pills-info .nav-item .nav-link.active:focus,
   .nav-pills.nav-pills-info .nav-item .nav-link.active:hover {
-    background-color: #00bcd4;
-    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(0, 188, 212, 0.6);
+    /* background-color: #00bcd4; */
+    /* box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(0, 188, 212, 0.6); */
     color: #ffffff;
   }
   
@@ -15263,24 +15263,24 @@
   .nav-pills.nav-pills-success .nav-item .nav-link.active,
   .nav-pills.nav-pills-success .nav-item .nav-link.active:focus,
   .nav-pills.nav-pills-success .nav-item .nav-link.active:hover {
-    background-color: #4caf50;
-    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(76, 175, 80, 0.6);
+    /* background-color: #4caf50;
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(76, 175, 80, 0.6); */
     color: #ffffff;
   }
   
   .nav-pills.nav-pills-warning .nav-item .nav-link.active,
   .nav-pills.nav-pills-warning .nav-item .nav-link.active:focus,
   .nav-pills.nav-pills-warning .nav-item .nav-link.active:hover {
-    background-color: #ff9800;
-    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(255, 152, 0, 0.6);
+    /* background-color: #ff9800;
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(255, 152, 0, 0.6); */
     color: #ffffff;
   }
   
   .nav-pills.nav-pills-danger .nav-item .nav-link.active,
   .nav-pills.nav-pills-danger .nav-item .nav-link.active:focus,
   .nav-pills.nav-pills-danger .nav-item .nav-link.active:hover {
-    background-color: #f44336;
-    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(244, 67, 54, 0.6);
+    /* background-color: #f44336;
+    box-shadow: 0 5px 20px 0px rgba(0, 0, 0, 0.2), 0 13px 24px -11px rgba(244, 67, 54, 0.6); */
     color: #ffffff;
   }
   
