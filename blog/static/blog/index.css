@@ -107,15 +107,24 @@ footer{
 }
 
 .center-element{
-  height: 80vh;
-  width: 80vw;
+  height: 150vh;
+  width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+  /* background-color: lavender; */
 }
 
-
-
+.form-adj{
+  
+  /* background-color: blue !important; */
+  /* height: auto; */
+  min-height:65vh;
+  width: 80vw;
+  
+  
+}
 
 @media only screen and (max-width: 800px) {
   /* body {
