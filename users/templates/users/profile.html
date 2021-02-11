@@ -2,7 +2,7 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 
-<div class="page-header clear-filter bg-img" data-parallax="true" style="background-image: url('https://images.unsplash.com/photo-1582518338351-a4c3daed2b12?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1527&q=80');"></div>
+<div class="page-header clear-filter bg-img" data-parallax="true" style="background-image: url('https://images.unsplash.com/photo-1579691099788-42394ae932d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');"></div>
 <div class="main main-raised">
   <div class="profile-content brand">
     <div class="container">
@@ -29,17 +29,22 @@
           <div class="profile-tabs">
             <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
               <li class="nav-item">
-                <a class="nav-link active" href="#studio" role="tab" data-toggle="tab">
-                  <i class="material-icons">camera</i> Studio
+                <a class="nav-link col-change" href="#community" role="tab" data-toggle="tab">
+                  <i class="material-icons">groups</i> Community
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#works" role="tab" data-toggle="tab">
-                  <i class="material-icons">palette</i> Work
+                <a class="nav-link col-change" href="#code" role="tab" data-toggle="tab">
+                  <i class="material-icons">code</i> Code
                 </a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#favorite" role="tab" data-toggle="tab">
+                <a class="nav-link col-change" href="#awards" role="tab" data-toggle="tab">
+                  <i class="material-icons">emoji_events</i> awards
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link col-change" href="#favorite" role="tab" data-toggle="tab">
                   <i class="material-icons">favorite</i> Favorite
                 </a>
               </li>
@@ -47,90 +52,126 @@
           </div>
         </div>
       </div>
-      <div class=" ">
-        <div class="tab-pane active text-center gallery" id="studio">
+      <div class="tab-content tab-space">
+        <div class="tab-pane active text-center gallery" id="community">
           <div class="row">
-            <!-- <div class="col-md-3 ml-auto">
-              <img src="../assets/img/examples/studio-1.jpg" class="rounded">
-              <img src="../assets/img/examples/studio-2.jpg" class="rounded">
-            </div>
-            <div class="col-md-3 mr-auto">
-              <img src="../assets/img/examples/studio-5.jpg" class="rounded">
-              <img src="../assets/img/examples/studio-4.jpg" class="rounded">
-            </div>
-          </div> -->
+            
+            
+            {% for thing in things %}
+            
+                {% if thing.Category == 'community' %}
+                      
 
+                      <div class="card card-profile">
+                        <div class="card-header card-header-icon card-head">
+                           <div class="profile-card-icon" style="background-image: url({{ thing.profile_image.url }});"></div>
+                           <div class="profile-meta">
+                              <h2 class="card-title strikeout">{{thing.Title}}</h2>
+                              <p class="category">{{thing.Date_started}}</p>
+                              <p class="category">{{thing.Date_ended}}</p>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           {{thing.Description|safe}}
+                           
+                        </div>
+                     </div>
+                     
 
-        
-        {% for thing in things.filter(category='community') %}
-        <div class="card card-profile">
-          <div class="card-header card-head">
-            <div class="profile-card-icon">
-              
-            </div>
-            <div class="profile-meta">
-              <h4 class="card-title strikeout">{{thing.Title}}</h4>
-                <p class="category">{{thing.Date_started}}</p><p class="category">{{thing.Date_ended}}</p>
-            </div>
+                {% endif %}
+            {% endfor %}
           </div>
-          <div class="card-body">
-                {{thing.Description|safe}}
-          </div>
-      </div>
-    </div>
-    {% endfor %}
         </div>
-       
-         
-
-    
-
-     
-        
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <!-- <div class="tab-pane text-center gallery" id="works">
+        <div class="tab-pane text-center gallery" id="code">
           <div class="row">
-            <div class="col-md-3 ml-auto">
-              <img src="../assets/img/examples/olu-eletu.jpg" class="rounded">
-              <img src="../assets/img/examples/clem-onojeghuo.jpg" class="rounded">
-              <img src="../assets/img/examples/cynthia-del-rio.jpg" class="rounded">
-            </div>
-            <div class="col-md-3 mr-auto">
-              <img src="../assets/img/examples/mariya-georgieva.jpg" class="rounded">
-              <img src="../assets/img/examples/clem-onojegaw.jpg" class="rounded">
-            </div>
+          
+            
+            {% for thing in things %}
+           
+                {% if thing.Category == 'code' %}
+                      
+
+                      <div class="card card-profile">
+                        <div class="card-header card-header-icon card-head">
+                           <div class="profile-card-icon" style="background-image: url({{ thing.profile_image.url }});"></div>
+                           <div class="profile-meta">
+                              <h2 class="card-title strikeout">{{thing.Title}}</h2>
+                              <p class="category">{{thing.Date_started}}</p>
+                              <p class="category">{{thing.Date_ended}}</p>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           {{thing.Description|safe}}
+                           
+                        </div>
+                     </div>
+                     
+
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="tab-pane text-center gallery" id="awards">
+          <div class="row">
+           
+            
+            {% for thing in things %}
+            
+                {% if thing.Category == 'award' %}
+                      
+
+                      <div class="card card-profile">
+                        <div class="card-header card-header-icon card-head">
+                           <div class="profile-card-icon" style="background-image: url({{ thing.profile_image.url }});"></div>
+                           <div class="profile-meta">
+                              <h2 class="card-title strikeout">{{thing.Title}}</h2>
+                              <p class="category">{{thing.Date_started}}</p>
+                              <p class="category">{{thing.Date_ended}}</p>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           {{thing.Description|safe}}
+                           
+                        </div>
+                     </div>
+                     
+
+                {% endif %}
+            {% endfor %}
           </div>
         </div>
         <div class="tab-pane text-center gallery" id="favorite">
           <div class="row">
-            <div class="col-md-3 ml-auto">
-              <img src="../assets/img/examples/mariya-georgieva.jpg" class="rounded">
-              <img src="../assets/img/examples/studio-3.jpg" class="rounded">
-            </div>
-            <div class="col-md-3 mr-auto">
-              <img src="../assets/img/examples/clem-onojeghuo.jpg" class="rounded">
-              <img src="../assets/img/examples/olu-eletu.jpg" class="rounded">
-              <img src="../assets/img/examples/studio-1.jpg" class="rounded">
-            </div>
+          
+            {% for thing in things %}
+          
+                {% if thing.Category == 'favourite' %}
+                      
+
+                      <div class="card card-profile">
+                        <div class="card-header card-header-icon card-head">
+                           <div class="profile-card-icon" style="background-image: url({{ thing.profile_image.url }});"></div>
+                           <div class="profile-meta">
+                              <h2 class="card-title strikeout">{{thing.Title}}</h2>
+                              <p class="category">{{thing.Date_started}}</p>
+                              <p class="category">{{thing.Date_ended}}</p>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           {{thing.Description|safe}}
+                           
+                        </div>
+                     </div>
+                     
+
+                {% endif %}
+            {% endfor %}
           </div>
         </div>
       </div>
     </div>
   </div>
-</div> -->
+</div>
+            
+
 {% endblock %}
