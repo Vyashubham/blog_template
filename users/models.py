@@ -29,12 +29,9 @@ class VyasProfile(models.Model):
     Description = HTMLField()
     Date_started = models.DateField()
     Date_ended = models.DateField(null=True)
-    # Category = models.CharField(max_length=50)
     Category= models.CharField(max_length=30, choices=profile_options, default='Community')
-    # year_in_school = models.CharField(max_length=2,
-    #                                   choices=YEAR_IN_SCHOOL_CHOICES,
-    #                                   default=FRESHMAN)
-    
+    profile_image = models.ImageField(default='default.jpg', upload_to='logos')
+
 
     def __str__(self):
         return f'{self.Title}'
