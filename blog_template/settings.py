@@ -235,7 +235,7 @@ django_on_heroku.settings(locals())
 
 
 TINYMCE_DEFAULT_CONFIG = {
-    "height": "50rem",
+    "height": "50vh",
     "width": "100%",
     'cleanup_on_startup': True,
     'custom_undo_redo_levels': 20,
