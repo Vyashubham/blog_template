@@ -126,6 +126,108 @@ footer{
   
 }
 
+.profile{
+  position: relative;
+}
+
+.avatar1{
+  /* background-color: aquamarine; */
+  width: 20vh;
+  height: auto;
+  margin: 0 auto;
+  bottom: 6rem !important;
+  position: relative;
+
+
+}
+
+
+.name{
+  /* background-color: azure !important; */
+  
+  bottom: 4rem !important;
+  font-size: 2.5rem !important;
+  position: relative;
+}
+
+.card{
+  width: 100% !important;
+}
+.card-profile{
+  margin: 6rem 0;
+}
+
+.card-header{
+  display: flex;
+  justify-content: space-between;
+  /* background: #f0ebeb;   */
+  background-image: url(https://images.unsplash.com/photo-1561211974-8a2737b4dcac?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=1350&q=80);
+  background-size: cover;
+  /* fallback for old browsers */
+  /* background: -webkit-linear-gradient(to right, #ffffff, #aed3e2);  /* Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to right, #ffffff, #aed3e2); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ */
+
+  
+}
+
+
+.profile-card-icon{
+  width: 13vh;
+  height: 13vh;
+  
+  overflow: hidden;
+  background-color: #ffffff;
+  background-position: center;
+  background-size: contain !important;
+  background-image: url(https://headstart.in/themes/headstart/images/logo.png);
+  background-repeat: no-repeat;
+  border-radius: .3rem;
+  
+  /* box-sizing: border-box;
+  padding: 0 5rem !important; */
+  /* background-color: #f6f6f6 !important; */
+}
+
+
+.profile-meta{
+  /* background-color: aqua; */
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  
+}
+
+.card-title{
+  font-size: 2rem;
+  background-color: white;
+  border-radius: 0 1rem 0 0;
+  padding: .2rem;
+  padding-right: 1rem;
+  
+}
+/* .strikeout {
+  font-size: 3em;
+  line-height: 1em;
+  position: relative;
+}
+.strikeout::after {
+  border-bottom: 0.335em solid rgb(240, 136, 38);
+  
+  opacity: .7;
+  z-index: 0;
+  content: "";
+  left: 0;
+  margin-top: calc(0.0rem / 3 * -1);
+  position: absolute;
+  right: 0;
+  top: 60%;
+} */
+
+.card-body{
+  padding-top: 4rem !important;
+}
 @media only screen and (max-width: 800px) {
   /* body {
     background-color: lightblue !important;
