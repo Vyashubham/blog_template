@@ -1,29 +1,177 @@
+
 {% extends 'blog/base.html' %}
-{% load crispy_forms_tags %}
 {% block content %}
-<div class="content-section">
-    <div class="media">
-      <img class="rounded-circle account-img" src="{{ user.profile.image.url }}">
-      <div class="media-body">
-        <h2 class="account-heading">{{ user.username }}</h2>
-        <p class="text-secondary">{{ user.email }}</p>
+
+<div class="page-header clear-filter bg-img" data-parallax="true" style="background-image: url('https://images.unsplash.com/photo-1579691099788-42394ae932d8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1489&q=80');"></div>
+<div class="main main-raised">
+  <div class="profile-content brand">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <div class="profile">
+            <div class="avatar1">
+              <img src="https://shubhamvyas.com/images/circle-cropped-bw.webp" alt="Circle Image" class="img-raised rounded-circle img-fluid profile_pic profile-adj">
+            </div>
+            <div class="name ">
+              <h3 class="title">Shubham Vyas</h3>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-dribbble"><i class="fa fa-facebook"></i></a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-twitter"><i class="fa fa-twitter"></i></a>
+              <a href="#pablo" class="btn btn-just-icon btn-link btn-pinterest"><i class="fa fa-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="description text-center">
+        <p>An artist of considerable range, Chet Faker &#x2014; the name taken by Melbourne-raised, Brooklyn-based Nick Murphy &#x2014; writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. </p>
+      </div>
+      <div class="row">
+        <div class="col-md-6 ml-auto mr-auto">
+          <div class="profile-tabs">
+            <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
+              <li class="nav-item">
+                <a class="nav-link col-change" href="#community" role="tab" data-toggle="tab">
+                  <i class="material-icons">groups</i> Community
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link col-change" href="#code" role="tab" data-toggle="tab">
+                  <i class="material-icons">code</i> Code
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link col-change" href="#awards" role="tab" data-toggle="tab">
+                  <i class="material-icons">emoji_events</i> awards
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link col-change" href="#favorite" role="tab" data-toggle="tab">
+                  <i class="material-icons">favorite</i> Favorite
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="tab-content tab-space">
+        <div class="tab-pane active text-center gallery" id="community">
+          <div class="row">
+            
+            
+            {% for thing in things %}
+            
+                {% if thing.Category == 'community' %}
+                      
+
+                      <div class="card card-profile">
+                        <div class="card-header card-header-icon card-head">
+                           <div class="profile-card-icon" style="background-image: url({{ thing.profile_image.url }});"></div>
+                           <div class="profile-meta">
+                              <h2 class="card-title strikeout">{{thing.Title}}</h2>
+                              <p class="category">{{thing.Date_started}}</p>
+                              <p class="category">{{thing.Date_ended}}</p>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           {{thing.Description|safe}}
+                           
+                        </div>
+                     </div>
+                     
+
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="tab-pane text-center gallery" id="code">
+          <div class="row">
+          
+            
+            {% for thing in things %}
+           
+                {% if thing.Category == 'code' %}
+                      
+
+                      <div class="card card-profile">
+                        <div class="card-header card-header-icon card-head">
+                           <div class="profile-card-icon" style="background-image: url({{ thing.profile_image.url }});"></div>
+                           <div class="profile-meta">
+                              <h2 class="card-title strikeout">{{thing.Title}}</h2>
+                              <p class="category">{{thing.Date_started}}</p>
+                              <p class="category">{{thing.Date_ended}}</p>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           {{thing.Description|safe}}
+                           
+                        </div>
+                     </div>
+                     
+
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="tab-pane text-center gallery" id="awards">
+          <div class="row">
+           
+            
+            {% for thing in things %}
+            
+                {% if thing.Category == 'award' %}
+                      
+
+                      <div class="card card-profile">
+                        <div class="card-header card-header-icon card-head">
+                           <div class="profile-card-icon" style="background-image: url({{ thing.profile_image.url }});"></div>
+                           <div class="profile-meta">
+                              <h2 class="card-title strikeout">{{thing.Title}}</h2>
+                              <p class="category">{{thing.Date_started}}</p>
+                              <p class="category">{{thing.Date_ended}}</p>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           {{thing.Description|safe}}
+                           
+                        </div>
+                     </div>
+                     
+
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
+        <div class="tab-pane text-center gallery" id="favorite">
+          <div class="row">
+          
+            {% for thing in things %}
+          
+                {% if thing.Category == 'favourite' %}
+                      
+
+                      <div class="card card-profile">
+                        <div class="card-header card-header-icon card-head">
+                           <div class="profile-card-icon" style="background-image: url({{ thing.profile_image.url }});"></div>
+                           <div class="profile-meta">
+                              <h2 class="card-title strikeout">{{thing.Title}}</h2>
+                              <p class="category">{{thing.Date_started}}</p>
+                              <p class="category">{{thing.Date_ended}}</p>
+                           </div>
+                        </div>
+                        <div class="card-body">
+                           {{thing.Description|safe}}
+                           
+                        </div>
+                     </div>
+                     
+
+                {% endif %}
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="content-section">
-      <form method="POST" enctype="multipart/form-data"> 
-          {% csrf_token %}
-          <fieldset class="form-group">
-              <legend class="border-bottom mb-4">Edit Profile</legend>
-              {{ u_form|crispy }}
-              {{ p_form|crispy }}
-              <div class="form-group">
-                  <button class="btn btn-outline-info" type="submit">Edit</button>
-              </div>
-          </fieldset>
-      </form>
-
   </div>
-  </div>
-  
+</div>
+            
+
 {% endblock %}

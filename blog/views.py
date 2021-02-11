@@ -32,6 +32,14 @@ class PostListView(ListView):
 
     paginate_by = 2 #change this to a higher number
 
+class BlogpostListView(ListView):
+    model = Post
+    template_name = 'blog/blog_index.html'
+    context_object_name = 'posts'
+    ordering = ['-Date']
+
+    paginate_by = 2 #change this to a higher number
+
 class UserPostListView(ListView):
     model = Post
     template_name = 'blog/index.html'
@@ -72,3 +80,10 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 def about(request):
     return render(request, 'blog/about.html')
 
+
+def junk(request):
+#     context = {
+#     'posts': Post.objects.all().order_by('-Date')
+# }
+    
+    return render(request, 'blog/junk2.html')

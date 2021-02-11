@@ -129,3 +129,6 @@ dmypy.json
 .pyre/
 
 media/
+
+junk.html
+junk2.html

@@ -4,7 +4,20 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.decorators import login_required
-# Create your views here.
+from .models import VyasProfile
+
+
+
+
+
+
+
+def profile(request):
+    context = {
+        'things': VyasProfile.objects.all()
+    }
+
+    return render(request, 'users/profile.html', context)
 
 def register(request):
     if request.method == 'POST':
@@ -20,7 +33,7 @@ def register(request):
     return render(request, 'users/register.html', {'form': form})
 
 @login_required
-def profile(request):
+def account(request):
     if request.method == 'POST':
         u_form = UserUpdateForm(request.POST, instance=request.user)
         p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
@@ -39,4 +52,7 @@ def profile(request):
         'u_form': u_form,
         'p_form': p_form
     }
-    return render(request, 'users/profile.html', context)
+    return render(request, 'users/user_profile.html', context)
+
+
+    
