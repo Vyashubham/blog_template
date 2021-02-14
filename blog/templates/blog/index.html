@@ -22,10 +22,7 @@
       <div>
         <h2 class="brand">Latest Post</h2>
       </div>
-
-
-
-      {% for post in posts|slice:":2" %}
+      {% for post in posts|slice:":1" %}
       <a href="{% url 'post_detail_view' post.slug %}">
           <div class="card card-nav-tabs text-center">  
               <div class="card-body">
