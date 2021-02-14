@@ -1,8 +1,9 @@
 {% extends 'blog/base.html' %}
 {% block content %}
 
-    <div class='border-top pt-3'>
-        <small class="text-muted">You're Logged Out!<br><a href="{% url 'login_view' %}">Login Again</a></small>
+    <div class='border-top pt-3 center-element'>
+        <h3 class="text-muted ">You're Logged Out!</h3>
+        <a  class="btn btn-outline-info"  href="{% url 'login_view' %}">Login Again</a>
     </div>
 
 {% endblock %}
