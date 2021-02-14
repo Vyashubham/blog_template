@@ -350,6 +350,13 @@ footer{
   border-bottom: .3rem solid black !important ;
   
 }
+.profile_pic{
+  width: 15vw;
+  height: auto;
+}
+a, h1,h2,h3,span{
+  color: black !important;
+}
 @media only screen and (max-width: 800px) {
   /* body {
     background-color: lightblue !important;
