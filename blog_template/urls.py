@@ -32,7 +32,7 @@ from django.contrib.auth import views as auth_views
 # ####
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('vyas_admin/', admin.site.urls),
     path('',include('blog.urls')),
     path('user/',include('users.urls')),
     path('user/',include('users.urls')),
