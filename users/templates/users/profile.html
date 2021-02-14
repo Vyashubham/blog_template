@@ -52,6 +52,11 @@
           </div>
         </div>
       </div>
+      {% if user.is_authenticated %}
+      <div class="create_profile_card" >
+        <a class="btn btn-outline-info float-right new-post-btn" href="{% url 'profile_create_view' %}">create new view</a>
+      </div>
+      {% endif %}
       <div class="tab-content tab-space">
         <div class="tab-pane active text-center gallery" id="community">
           <div class="row">
