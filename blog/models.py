@@ -11,7 +11,7 @@ class Post(models.Model):
     Date = models.DateTimeField(auto_now_add=True)
     Last_Modified = models.DateTimeField(auto_now=True)
     slug = models.SlugField(unique=True)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
     def save(self, *args, **kwargs):
         self.slug = slugify(self.Title)
