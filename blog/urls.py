@@ -10,8 +10,8 @@ urlpatterns = [
     path('post/<slug:slug>/update/', PostUpdateView.as_view(), name="post_update_view"),
     path('post/<slug:slug>/delete/', PostDeleteView.as_view(), name="post_delete_view"),
     path('user/<str:username>', UserPostListView.as_view(), name="user_detail_view"),
-    path('about/', views.about, name="about"),
+    # path('about/', views.about, name="about"),
 
 
-    path('junk/', views.junk, name="junk"),
+    # path('junk/', views.junk, name="junk"),
 ]

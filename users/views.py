@@ -3,13 +3,10 @@ from django.http import HttpResponse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 from .forms import UserRegistrationForm, UserUpdateForm, ProfileUpdateForm
+from django.views.generic import ListView, CreateView, UpdateView, DeleteView
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
 from .models import VyasProfile
-
-
-
-
-
 
 
 def profile(request):
@@ -18,6 +15,30 @@ def profile(request):
     }
 
     return render(request, 'users/profile.html', context)
+
+
+
+class ProfileCreateView(LoginRequiredMixin, CreateView):
+    model = VyasProfile
+    fields = ['Title', 'Description', 'Date_started', 'Date_ended', 'Category', 'profile_image']
+
+
+
+
+class ProfileUpdateView(LoginRequiredMixin, UpdateView):
+    model = VyasProfile
+    fields = ['Title', 'Description', 'Date_started', 'Date_ended', 'Category', 'profile_image']
+
+
+class ProfileDeleteView(LoginRequiredMixin, DeleteView):
+    model = VyasProfile
+    fields = ['Title', 'Description']
+
+    success_url = '/'
+
+
+
+
 
 def register(request):
     if request.method == 'POST':

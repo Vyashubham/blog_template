@@ -77,13 +77,16 @@ class PostDeleteView(LoginRequiredMixin, DeleteView):
 
 
 
-def about(request):
-    return render(request, 'blog/about.html')
+# def about(request):
+#     return render(request, 'blog/about.html')
 
 
-def junk(request):
-#     context = {
-#     'posts': Post.objects.all().order_by('-Date')
-# }
+# def junk(request):
+# #     context = {
+# #     'posts': Post.objects.all().order_by('-Date')
+# # }
     
-    return render(request, 'blog/junk2.html')
+#     return render(request, 'blog/junk2.html')
+
+# def error(request):
+#     return HttpResponse(request, 'error page!!!!')
