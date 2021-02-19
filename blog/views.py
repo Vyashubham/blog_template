@@ -1,28 +1,10 @@
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
-from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
-from django.contrib.auth.mixins import LoginRequiredMixin
+# from django.http import HttpResponse
+from django.views.generic import ListView, DetailView
 from .models import Post
 from django.contrib.auth.models import User
 
 
-#fake posts Dummy_Data
-# posts = [
-#     {
-#         'title': 'title1',
-#         'content': 'abcdefghijklmnopqrstuvwxyz',
-#         'date': 'Jan 28, 2021'
-
-#     }
-# ]
-
-
-# def home(request):
-
-#     context = {
-#         'posts': Post.objects.all()
-#     }
-#     return render(request, 'blog/index.html', context)
 
 class PostListView(ListView):
     model = Post
@@ -56,37 +38,3 @@ class UserPostListView(ListView):
 class PostDetailView(DetailView):
     model = Post
 
-
-class PostCreateView(LoginRequiredMixin, CreateView):
-    model = Post
-    fields = ['Title', 'Content']
-
-
-
-
-class PostUpdateView(LoginRequiredMixin, UpdateView):
-    model = Post
-    fields = ['Title', 'Content']
-
-
-class PostDeleteView(LoginRequiredMixin, DeleteView):
-    model = Post
-    fields = ['Title', 'Content']
-
-    success_url = '/'
-
-
-
-# def about(request):
-#     return render(request, 'blog/about.html')
-
-
-# def junk(request):
-# #     context = {
-# #     'posts': Post.objects.all().order_by('-Date')
-# # }
-    
-#     return render(request, 'blog/junk2.html')
-
-# def error(request):
-#     return HttpResponse(request, 'error page!!!!')

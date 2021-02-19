@@ -16,10 +16,7 @@
           <h1 class="brand text-center">{{ post.Title }}</h1>
           <p class="text-center date-adj">{{ post.Date|date:'M d, Y' }}</p>
           {% if user.is_authenticated %}
-          <div class="container blog-edit-btn">
-            <a class="btn btn-secondary btn-sm mt-1 mb-1 edit-btn"  href="{% url 'post_update_view' object.slug %}">Update</a>
-            <a class="btn btn-danger btn-sm mt-1 mb-1"  href="{% url 'post_delete_view' object.slug %}">Delete</a>
-          </div>
+          
         {% endif %}
           {{ post.Content|safe }}
           <h1 class="text-center blog-end-dot">. . .</h1>
