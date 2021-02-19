@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 't4n)lf==(z27)=l7zi6goc8zh7um&u#@r!#ldc577zcv7k35q8'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 # DEBUG_PROPAGATE_EXCEPTIONS = True
@@ -133,8 +133,8 @@ USE_TZ = True
 
 # CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
-# LOGIN_REDIRECT_URL = 'website_home'
-# LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'website_home'
+LOGIN_URL = 'login'
 
 # EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 # EMAIL_HOST = 'smtp.gmail.com'
