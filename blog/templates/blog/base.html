@@ -75,9 +75,9 @@
           <!-- <a class="nav-item nav-link" href="{% url 'post_create_view' %}">New Post</a> -->
             <a class="nav-item nav-link link-outline" href="{% url 'logout_view' %}">Logout</a>
             <a class="nav-item nav-link" href="{% url 'account' %}">Account</a>
-          {% else %}
+          
           <!-- <a class="nav-item nav-link" href="{% url 'register_view' %}">Register</a>   -->
-          <a class="nav-item nav-link link-outline" href="{% url 'login_view' %}">Login</a>
+          
             
           {% endif %}
         </ul>
@@ -89,7 +89,7 @@
   <!--  End Modal -->
   <footer class="footer" data-background-color="black">
     <div class="container">
-      VYAS
+      <a class="nav-item nav-link link-outline" href="{% url 'login_view' %}" style="outline: none; border: none;">VYAS</a>
   </footer>
   
  
