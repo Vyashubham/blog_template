@@ -9,7 +9,7 @@ class Post(models.Model):
     Title = models.CharField(max_length=100)
     Content = HTMLField()
     Date = models.DateTimeField(auto_now_add=True)
-    Last_Modified = models.DateTimeField(auto_now=True)
+    # Last_Modified = models.DateTimeField(auto_now=True)
     slug = models.SlugField(unique=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE, null=True)
 
